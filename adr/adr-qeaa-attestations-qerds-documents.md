@@ -6,6 +6,11 @@
 | **Date** | 2026-06-11 |
 | **Context** | WE BUILD WP4 — Architecture |
 
+**Authors:**
+
+jot@brreg.no, puria@dyne.org, rune@emning.no, angel@ishare.eu, sander.dijkhuis@cleverbase.com, martin.westerkamp@spherity.com, Nklomp@sphereon.com, lld@netsmart.gr, aprentza@unipi.gr, muhamed.turkanovic@um.si
+- Track 3 - Workshop (AMS, 9,10th June)
+
 ## Context
 
 Neither eIDAS (as amended by Regulation (EU) 2024/1183) nor the proposed EU Business Wallet regulation (COM(2025) 838) provides a definition of an attestation beyond it being a structured piece of data that is signed or sealed by its issuer. In the EUDI Wallet context this under-specification is workable: the holder is a natural person, scoped by the device in use, and the wallet is in practice the system of record for the credentials it holds.
