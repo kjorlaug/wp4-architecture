@@ -173,27 +173,28 @@ Although the interaction is system-driven, the same trust framework, credential 
 
 The following decision tree guides implementers in choosing between an EAA (including QEAA and PuB-EAA), the WE BUILD QERDS, and existing enterprise IT integrations.
 
-Its starting point is the user's need in the flow, which maps to the two capabilities the wallet provides. Sharing **trust** means issuing or presenting an *attestation* — an issuer-asserted, verifiable claim. Sharing **content** means delivering a *document* or *record* to a counterparty as a *message*. The two are orthogonal, so a flow that needs both — for example, a QEAA that must also be delivered with legal effect — applies the tree once per need. All type terms are defined in the glossary.
+Its starting point is the user's need in the flow, which maps to the two capabilities the wallet provides. **Proving a claim** means issuing or presenting an *EAA* — an issuer-asserted, independently verifiable claim. **Sharing information** means delivering a *business document* or *record* to a counterparty as a *message*. As a rule of thumb, an EAA is suitable wherever a zero-knowledge proof could suffice — proving something without transferring the underlying document; everything else needs a data-transfer mechanism. The two paths are orthogonal, so a flow that needs both — for example, a QEAA that must also be delivered with legal effect — applies the tree once per need. All type terms are defined in the glossary.
 
 ```mermaid
 flowchart TD
-  need(["User need in the flow"]) --> what{{"What must the user share?"}}
-  what -->|"Trust — a verifiable claim (an attestation)"| who{{"Who must be able to rely on it?"}}
-  what -->|"Content — a document or record, delivered as a message"| deliver{{"Does delivery itself need legal effect?"}}
+  need(["User need in the flow"]) --> what{{"What must the user do?"}}
 
-  %% Trust / attestation branch
-  who -->|"Any relying party, under EU rules"| effect{{"Does issuing the attestation<br/>change the parties' legal position?"}}
-  who -->|"A known counterparty, by agreement"| bilateral["Agreed method<br/>(trust already established —<br/>outside wallet scope)"]
+  what -->|"Prove a claim (an EAA)"| who{{"Who must be able to rely on it?"}}
+  what -->|"Share information (a business document or record)"| deliver{{"Does delivery itself need legal effect?"}}
+
+  %% EAA branch
+  who -->|"Any relying party, under EU rules"| effect{{"Does issuing the EAA<br/>change the parties' legal position?"}}
+  who -->|"A known counterparty, by agreement"| bilateral["Agreed method<br/>(bilateral relationship —<br/>outside wallet scope)"]
   effect -->|"Yes — issuing is the act"| constitutive["EAA (constitutive)"]
   effect -->|"No — an earlier act, held<br/>in an authoritative source"| suffice{{"Attributes alone, or must the<br/>source record stay traceable?"}}
   suffice -->|"Attributes suffice"| derived["EAA (derived)"]
   suffice -->|"Source record must stay traceable"| ref["EAA (derived) + reference to the record"]
 
-  %% Content / delivery branch
+  %% Information / delivery branch
   deliver -->|"Yes — proof of send/receipt matters"| regime{{"Is the channel already<br/>governed by a sectoral regime?"}}
   deliver -->|"No — ordinary or agreed exchange"| ordinary["Existing channel<br/>(outside wallet scope)"]
   regime -->|"No regime governs the channel"| qerds["QERDS message (notification / submission)"]
   regime -->|"A sectoral regime governs it"| sectoral["That regime's channel"]
 ```
 
-**Data** is the substrate carried by both branches — the attributes an attestation asserts and the content a document holds — so it is not a branch of its own. The two *outside wallet scope* leaves (bilateral trust, ordinary exchange) are the patterns the wallet's trust and delivery capabilities are intended to improve on.
+**Data** is the substrate carried by both branches — the attributes an EAA asserts and the content a business document holds — so it is not a branch of its own. An EAA is itself an *electronic document*; a *business document* is an electronic document that is not an EAA. The two *outside wallet scope* leaves (bilateral relationship, ordinary exchange) are the patterns the wallet's EAA and QERDS capabilities are intended to improve on.
