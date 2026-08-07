@@ -10,9 +10,12 @@ While this document avoids abbreviations as much as possible, commonly used abbr
 | :--- | :--- | :--- |
 | **Architectural Decision Record** | ADR | A document used to capture and justify significant technical choices. ADRs serve as the project’s "logbook" to ensure transparency regarding the rationale behind protocol and standard adoption. |
 | **Architecture and Reference Framework** | ARF | The reference architecture for the European Digital Identity Wallet ecosystem published by the European Commission in cooperation with the Member States. It defines roles, trust models, protocols and interoperability requirements for the ecosystem. |
+| **Attestation** | — | An issuer-asserted, independently verifiable claim about a subject. In the EBW ecosystem, attestations are expressed as Electronic Attestations of Attributes (see *EAA / QEAA / PuB-EAA*). |
 | **Attestation Rulebook**| - | A document describing the governance, requirements and semantic interpretation of a specific attestation type, including how credential data maps to vocabulary terms and schemas. |
 | **Blueprint** | — | The high-level architecture and integration document (D4.1) describing the WE BUILD ecosystem, architectural patterns, interaction flows and governance model. |
 | **Business Wallet Unit Attestation** | BWUA | A specific type of Wallet Unit Attestation issued for a European Business Wallet (EBW) instance. |
+| **Data** | — | Facts represented in a formalised, machine-processable form, independent of any container or evidential role; the base layer that documents contain and attestations carry as attributes. |
+| **Document** | — | A bounded container of content in electronic form (text, sound, visual or audiovisual). A *structured document* is one whose content is also machine-actionable data (e.g. a Peppol BIS invoice). |
 | **EAA Provider** | — | An entity that relies on authentic sources of information to issue attestations to a wallet. |
 | **EBW Instance** | — | A unique deployment or installation of a European Business Wallet (EBW) solution, controlled by an Owner (legal person or economic operator). |
 | **EBW Provider** | — | A Wallet Provider specifically authorized to issue and manage European Business Wallets (EBW). |
@@ -33,12 +36,14 @@ While this document avoids abbreviations as much as possible, commonly used abbr
 | <del>**Legal Person Identification Data**</del> | LPID | See **EBW Owner Identification Data** instead. |
 | **Level of Assurance** | LoA | A classification of the degree of confidence in the electronic identification of a natural person, a legal person, or a natural person representing a legal person. Recognised levels are: Low, Substantial, High. |
 | **List of Trusted Lists** | LoTL | A list that references national or ecosystem Trusted Lists, allowing participants to discover and validate trusted entities. |
+| **Message** | — | A transport-level envelope carrying content between parties, distinct from its payload. In WE BUILD, legal-grade delivery of messages is provided through QERDS. |
 | **Natural Person** | — | An individual human being acting in their own capacity. |
 | **Owner** | — | The legal person or economic operator that has legal control over and responsibility for an EBW Instance. |
 | **Personal Identification Data** | PID | A mandatory set of attributes issued to a natural person to uniquely identify them at Level of Assurance (LoA) High. |
 | **PID Provider** | — | An entity responsible for verifying the identity of a natural person and issuing Personal Identification Data (PID). |
 | **Qualified Electronic Registered Delivery Service** | QERDS | A secure communication channel that provides legal evidence of the handling of transmitted data. |
 | **Qualified Trust Service Provider** | QTSP | A regulated entity providing electronic trust services (e.g., signatures, seals, or delivery services) with full legal effect under eIDAS. |
+| **Record** | — | A document or data retained as evidence of an activity or obligation, with fixity, context and retention; defined by its evidential role and lifecycle, not its format. |
 | **Relying Party** | RP | An entity that requests and receives attestations from a wallet to verify specific attributes or identities. |
 | **Selective Disclosure JSON Web Token** | SD-JWT | A format allowing holders to share only specific parts of a credential while keeping other data private. |
 | **Trust Framework** | — | The set of governance rules, standards, and trust infrastructure used to establish and verify trust relationships between ecosystem participants. |
