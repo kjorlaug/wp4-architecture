@@ -64,6 +64,7 @@ graph TB
 | CS-013   | [Relying Party Intermediaries v1.0](cs-13-intermediary-services-preflight.md) |
 | CS-015   | [QERDS - EBW Interface - v1.0](cs-15-ebw-qtsp-wmp.md) |
 | CS-016   | [Inter-QTSP Message Relay (QERDS AS4) - v1.0](cs-16-qerds-as4.md) |
+| CS-017   | [Directory & Discovery (EDD) - v1.0](cs-17-directory.md) |
 <!--END INDEX-->
 
 ### WBCS Under Development
